@@ -71,6 +71,7 @@ export const list_artwork = [
     price: 1.646567,
     image: '/collections/collection1.png',
     product_name: 'Milvago chimachima',
+    delay: 300,
   },
   {
     id: 2,
@@ -78,6 +79,7 @@ export const list_artwork = [
     price: 3.457135,
     image: '/collections/collection2.png',
     product_name: 'Castor fiber',
+    delay: 200,
   },
   {
     id: 3,
@@ -85,6 +87,7 @@ export const list_artwork = [
     price: 2.34111,
     image: '/collections/collection3.png',
     product_name: 'Ara ararauna',
+    delay: 100,
   },
 ];
 

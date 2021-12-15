@@ -1,7 +1,8 @@
 import { list_FAQ } from '@/fake_data';
 import React, { useState } from 'react';
-import { Button, Container, CreatorItem } from '.';
-
+import { Container } from '.';
+import { Reveal, Fade } from 'react-awesome-reveal';
+import { fadeInDownShorter2, fadeInLeft, fadeInRight } from '@/keyframes';
 const FAQ = () => {
   const [faq, setFaq] = useState(
     list_FAQ.map((item) => ({ ...item, status: false })),
@@ -18,16 +19,25 @@ const FAQ = () => {
   };
 
   return (
-    <Container className={'mb-44'}>
+    <Container className={'mb-44 scroll-mt-10'} id='faq'>
       <div className='text-center mb-10'>
         <h2 className='font-bold mx-auto leading-snug w-full sm:w-[400px] text-3xl mb-2'>
           Freaquently Asked Question
         </h2>
-        <p className='opacity-50'>Wanna Ask Something?</p>
+        <Reveal keyframes={fadeInDownShorter2} duration={800} delay={100}>
+          <p className='opacity-50'>Wanna Ask Something?</p>
+        </Reveal>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {faq.map((item, i) => (
-          <AccordionItem key={i} toggleFaq={toggleFaq} data={item} />
+          <Reveal
+            key={i}
+            keyframes={(i + 1) % 2 === 0 ? fadeInLeft : fadeInRight}
+            duration={800}
+            delay={100}
+          >
+            <AccordionItem toggleFaq={toggleFaq} data={item} />
+          </Reveal>
         ))}
       </div>
     </Container>
@@ -49,7 +59,11 @@ const AccordionItem = ({ data, toggleFaq }) => {
         </p>
       </div>
       {data.status && (
-        <p className={data.status ? 'opacity-90' : 'opacity-50'}>{data.desc}</p>
+        <Fade>
+          <p className={data.status ? 'opacity-90' : 'opacity-50'}>
+            {data.desc}
+          </p>
+        </Fade>
       )}
     </div>
   );

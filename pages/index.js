@@ -12,10 +12,11 @@ import {
   TopCreator,
 } from '@/components';
 import React from 'react';
-
+import { Reveal } from 'react-awesome-reveal';
+import { fadeInDownShorter } from '@/keyframes';
 const Home = () => {
   return (
-    <div className='h-full main_bg text-white'>
+    <div className='h-full main_bg text-white overflow-hidden'>
       <Navbar />
       <Hero />
       <Sponsor />
@@ -33,7 +34,9 @@ const Home = () => {
           <h2 className='font-bold text-2xl sm:text-4xl lg:text-5xl mb-5 w-full md:w-2/5 leading-snug text-center'>
             Get ready to collect our NFT
           </h2>
-          <Button>Get Started</Button>
+          <Reveal delay={200} duration={1000} keyframes={fadeInDownShorter}>
+            <Button>Get Started</Button>
+          </Reveal>
         </div>
       </Container>
       <Footer />

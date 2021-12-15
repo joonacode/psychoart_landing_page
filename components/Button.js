@@ -1,7 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
 
-const Button = ({ className = '', variant, isLink, href, children }) => {
+const Button = ({
+  className = '',
+  variant,
+  isLink,
+  href,
+  onClick,
+  children,
+}) => {
   let rootClass = 'py-2 px-5 text-center rounded-xl ';
   if (variant === 'primary') {
     rootClass += 'btn_primary text-white shadow-sm';
@@ -12,12 +19,16 @@ const Button = ({ className = '', variant, isLink, href, children }) => {
   }
   if (isLink) {
     return (
-      <Link>
+      <Link href={href}>
         <a className={rootClass + ' ' + className}>{children}</a>
       </Link>
     );
   }
-  return <button className={rootClass + ' ' + className}>{children}</button>;
+  return (
+    <button onClick={onClick} className={rootClass + ' ' + className}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
