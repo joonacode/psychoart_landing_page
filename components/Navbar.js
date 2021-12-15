@@ -28,7 +28,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className='py-4 relative' id='top'>
+    <div className='py-4 relative'>
       <Container className={'flex justify-between items-center'}>
         <Logo />
         <div className='hidden sm:block'>

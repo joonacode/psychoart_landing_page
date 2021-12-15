@@ -16,7 +16,7 @@ import { Reveal } from 'react-awesome-reveal';
 import { fadeInDownShorter } from '@/keyframes';
 const Home = () => {
   return (
-    <div className='h-full main_bg text-white overflow-hidden'>
+    <div className='h-full main_bg text-white overflow-hidden' id='top'>
       <Navbar />
       <Hero />
       <Sponsor />
