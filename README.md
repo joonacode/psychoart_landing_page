@@ -8,7 +8,7 @@ Mencoba tailwindcss v3.0 dengan mengslicing landing page. Design by <a href='htt
 <br/ >
   <p align="center">
     <br />
-    <a href="https://psychoart.vercel.app/">View Demo</a>
+    <a href="https://psychoart.joonacode.com">View Demo</a>
   </p>
 </p>
 
